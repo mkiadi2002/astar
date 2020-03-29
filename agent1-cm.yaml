@@ -2,17 +2,31 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-   name: agent1-properties
+  name: agent-properties
+#data:
+#   agent_start: "o"
+#   agent_finish: "x"
+#   name: "agent1"
 data:
-   agent_start: "o"
-   agent_finish: "x"
-   name: "agent1"
-
-# data:
-#   agent_config:
-#     - name: agent1
-#        start: o
-#        finish: x
-#        map: test
-#     - name: agent2
-#        start: a
+  maze_config.yaml: |
+    map: |
+      ##############################
+      #   a     #              #   #
+      # ####    ########        #  #
+      #    #    #           b  #   #
+      #    ###     #####  ######   #
+      #      #   ###   #           #
+      #  o   #     #   #  #  #   ###
+      #     #####    #    #  # x   #
+      #              #       #     #
+      ##############################
+    agent_config:
+      - name: "agent1"
+        start: "o"
+        finish: "x"
+        path_indicator: "*"
+      - name: "agent2"
+        start: "a"
+        finish: "b"
+        path_indicator: "."
+    output_dir: "/usr/output"

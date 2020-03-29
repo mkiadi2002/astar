@@ -91,5 +91,6 @@ RUN mkdir astar
 RUN cd astar
 ADD *.py /astar/
 WORKDIR astar
+RUN pip install pyyaml
 #CMD python3 simpleai-maze.py > /usr/share/agent1.path.txt
 CMD python3 simpleai-maze.py
