@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: agent1
+spec:
+  containers:
+    - name: agent1
+      image: mkiadi2002/astar:v3
+      #command: [ "/bin/sh", "-c", "env" ]
+      # env:
+      # - name: agent1-start
+      #   value: o
+
+      envFrom:
+        - configMapRef:
+            name: agent1-properties
+      # volumeMounts:
+      #   - mountPath: "/usr/share/"
+      #     name: shared-pv-volume
+  restartPolicy: Never
+  # volumes:
+  #   - name: shared-pv-volume
+  #     persistentVolumeClaim:
+  #       claimName: shared-pv-volume

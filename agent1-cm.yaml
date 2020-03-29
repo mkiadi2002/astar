@@ -1,0 +1,18 @@
+#create a config map with this command: kubectl create -f agent1-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: agent1-properties
+data:
+   agent_start: "o"
+   agent_finish: "x"
+   name: "agent1"
+
+# data:
+#   agent_config:
+#     - name: agent1
+#        start: o
+#        finish: x
+#        map: test
+#     - name: agent2
+#        start: a
